@@ -1,4 +1,4 @@
-function insert(list){
+function choose(list){
     if (!Array.isArray(list)) return
     let len = list.length
     for(let i=0;i<len-1;i++){
@@ -10,4 +10,4 @@ function insert(list){
     }
     return list
 }
-console.log(insert([12,1,6,17,1,20]))
+console.log(choose([12,1,6,17,1,20]))
