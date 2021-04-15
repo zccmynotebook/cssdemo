@@ -1,0 +1,26 @@
+<style>
+section,div{
+    width: 200px;
+    height: 200px;
+    
+}
+.wrap{
+    perspective: 1000px;
+}
+.inner{
+    background-color: yellowgreen;
+    transform: translateZ(-1000px);
+}
+.inner1{
+    background-color: yellowgreen;
+    transform: perspective(1000px) translateZ(-1000px);
+}
+</style>
+<p>
+    perspective(l)应用于元素自身,作为transform的值,注意顺序，perspective要在translate前面；
+    perspective：xxpx属性应用在父元素；
+</p>
+<section class="wrap">
+    <div class="inner"></div>
+</section>
+<div class="inner1"></div>

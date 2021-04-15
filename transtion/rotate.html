@@ -1,0 +1,35 @@
+<style>
+    body{
+        perspective: 500px;
+    }
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 400px;
+        transform-style: preserve-3d;
+        transform: rotateY(30deg)
+    }
+div{
+    width: 200px;
+    height: 400px;  
+    position: absolute;
+    margin: auto;
+}
+div:first-child{
+    background-color: red;
+} 
+div:last-child{
+    background-color: green;
+    transform: rotateX(90deg)
+}
+</style>
+<body>
+    <p>知识点：transform-style: preserve-3d;</p>
+<section>
+        <div></div>
+        <div></div>
+</section>
+
+</body>
