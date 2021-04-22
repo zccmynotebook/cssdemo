@@ -30,14 +30,15 @@ canvas{
         let s=now.getSeconds()
         console.log(s)
         ctx.save()
-        ctx.clearRect(0,0,800,600)
+        ctx.clearRect(0,0,600,600)
 
         //移动坐标到画布中间
         ctx.translate(300,300)
+        ctx.rotate(-Math.PI/2);
         panel() //表盘
         drawMinuteMeter()//分刻度
         drawHourMeter()//时刻度
-        drawNumbers()
+        //drawNumbers()
         
         drawHand(Math.PI*s/30,160,2,'blue')
         drawHand(Math.PI*m/30+Math.PI*s/1800,130,4,'green')
@@ -90,7 +91,7 @@ canvas{
         ctx.rotate(deg)
         ctx.beginPath()
         ctx.moveTo(0,0)
-        ctx.lineTo(0,length) 
+        ctx.lineTo(length,0) 
         ctx.stroke()
         ctx.restore()
     }
