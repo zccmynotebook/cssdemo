@@ -1,0 +1,22 @@
+<style>
+canvas{
+    background-color: yellow
+}
+</style>
+<body>
+    <p>scale,translate等是对坐标轴的操作；</p>
+    <canvas width="600" height="600"></canvas>
+    <script>
+    let canvas=document.querySelector('canvas')
+    let ctx=canvas.getContext('2d')
+    ctx.fillStyle="red"
+    ctx.fillRect(0,0,100,100)
+    ctx.save()
+    ctx.fillStyle="green"
+    ctx.scale(2,2)
+    ctx.fillRect(0,100,100,100)
+    ctx.restore()
+    ctx.fillStyle="blue"
+    ctx.fillRect(0,100,100,100)
+    </script>
+</body>

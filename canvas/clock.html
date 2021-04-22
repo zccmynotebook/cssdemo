@@ -1,0 +1,109 @@
+<style>
+canvas{
+    background-color: yellow
+}
+</style>
+<body>
+    <canvas width="600" height="600"></canvas>
+    <script>
+    
+    let canvas=document.querySelector('canvas')
+    let ctx=canvas.getContext('2d')
+
+    requestAnimationFrame(draw)
+    // document.addEventListener("visibilitychange", function() {
+    //     if (document.hidden){
+    //         console.log('stop')
+    //         cancelAnimationFrame(time)
+    //     } else {
+    //         time=requestAnimationFrame(draw)
+    //     }
+    // });
+    
+    
+    function draw(){
+        let time=null
+        let now=new Date()
+        let h=now.getHours()
+            h=h>12?h-12:h
+        let m=now.getMinutes()
+        let s=now.getSeconds()
+        console.log(s)
+        ctx.save()
+        ctx.clearRect(0,0,800,600)
+
+        //移动坐标到画布中间
+        ctx.translate(300,300)
+        panel() //表盘
+        drawMinuteMeter()//分刻度
+        drawHourMeter()//时刻度
+        drawNumbers()
+        
+        drawHand(Math.PI*s/30,160,2,'blue')
+        drawHand(Math.PI*m/30+Math.PI*s/1800,130,4,'green')
+        drawHand(Math.PI*h/6+Math.PI*m/360+s*Math.PI/21600,100,6,'red')
+        ctx.restore()
+        requestAnimationFrame(draw)
+    }
+    function panel(){
+        //ctx.arc(300,300,200,0,Math.PI*2)
+        ctx.beginPath()
+        ctx.lineWidth=2
+        ctx.arc(0,0,200,0,Math.PI*2)
+        ctx.stroke()
+        ctx.closePath()
+    }
+
+    function drawHourMeter(){
+        ctx.save()
+        ctx.lineWidth=2
+        for(let i=0;i<12;i++){            
+            ctx.beginPath()
+            ctx.rotate(Math.PI/6)
+            ctx.moveTo(180,0)
+            ctx.lineTo(200,0) 
+            ctx.stroke()          
+           // ctx.closePath() 
+        }
+        ctx.restore()
+    }
+    function drawMinuteMeter(){
+        ctx.save()
+        ctx.lineWidth=1
+        for (i=0;i<60;i++){
+            if (i%5!=0) {
+                ctx.beginPath();
+                ctx.moveTo(190,0)
+                ctx.lineTo(200,0) 
+                ctx.stroke();
+            }
+            ctx.rotate(Math.PI/30);
+        }
+        
+        ctx.restore()
+    }
+    function drawHand(deg,length,width,color){
+        ctx.save()
+        ctx.lineWidth=width
+        ctx.lineCap="round"
+        ctx.strokeStyle=color
+        ctx.rotate(deg)
+        ctx.beginPath()
+        ctx.moveTo(0,0)
+        ctx.lineTo(0,length) 
+        ctx.stroke()
+        ctx.restore()
+    }
+    function drawNumbers(){
+        ctx.save()
+        ctx.font='16px yahei'
+        for(let i=1;i<=12;i++){  
+            ctx.rotate(Math.PI/6)
+            ctx.translate(-5, -160)
+            ctx.fillText(i,0,0)          
+            ctx.translate(5, 160); 
+         }
+        ctx.restore()
+    }
+    </script>
+</body>
