@@ -6,7 +6,8 @@ canvas{
 <body>
     <canvas width="600" height="600"></canvas>
     <script>
-    
+    let time=null
+
     let canvas=document.querySelector('canvas')
     let ctx=canvas.getContext('2d')
 
@@ -22,7 +23,6 @@ canvas{
     
     
     function draw(){
-        let time=null
         let now=new Date()
         let h=now.getHours()
             h=h>12?h-12:h
