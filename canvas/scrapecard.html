@@ -1,0 +1,54 @@
+<style>
+section{
+    background-color: yellow;
+    width: 200px;
+    height: 100px;
+    margin: 200px auto;
+    position: relative;
+}
+div,canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+div{
+    text-align: center;
+    line-height: 100px;
+}
+</style>
+<body>
+    <section>
+            <div></div>
+            <canvas width="200" height="100"></canvas>
+    </section>
+    
+    <script>
+      let div=document.querySelector('div')
+      let section=document.querySelector('section')
+      let canvas=document.querySelector('canvas')
+      let ctx=canvas.getContext('2d')
+      let jp=['一等奖','二等奖','三等奖','特等奖','谢谢参与']
+      div.innerText=jp[Math.floor(Math.random()*5)]
+      let isDraw=false
+      
+      ctx.fillStyle="darkgray"
+      ctx.fillRect(0,0,200,100)
+      ctx.fillStyle="#fff"
+      canvas.onmousedown=function(){
+        isDraw=true
+      }
+      canvas.onmouseup=function(){
+        isDraw=false
+      }
+      canvas.onmousemove=function(e){
+          if(isDraw){
+            ctx.globalCompositeOperation="destination-out"
+            let x=e.pageX-section.offsetLeft
+            let y=e.pageY-section.offsetTop
+            ctx.arc(x,y,20,0,2*Math.PI)
+            console.log(x,y)
+            ctx.fill()
+          }
+      }
+    </script>
+</body>
