@@ -1,0 +1,63 @@
+<style>
+    :root{
+        --turndeg: 30deg
+    }
+ul{
+    list-style: none;
+    width: 500px;
+    margin: 100px auto;
+}
+li{
+    width: 100px;
+    height: 100px;
+    background: yellowgreen;
+    margin-bottom: 10px;
+    position: relative;
+}
+li::after{
+    content: '';
+    border: 1px dashed red;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left:0;
+    top:0;
+    box-sizing: border-box;
+}
+.x li:nth-child(2){
+    transform: skew(var(--turndeg));
+}
+.x li:nth-child(3){
+    transform: skew(var(--turndeg));
+    transform-origin: left bottom;
+}
+.x li:nth-child(4){
+     transform: skew(var(--turndeg));
+    transform-origin: left top;
+}
+.x li:nth-child(5){
+     transform: skew(var(--turndeg));
+    transform-origin: right top;
+}
+.x li:nth-child(6){
+     transform: skew(var(--turndeg));
+    transform-origin: right bottom;
+}
+</style>
+
+<ul class="x">
+<li>no transform</li>
+<li>origin: center;</li>
+<li>origin: left bottom;</li>
+<li>origin: left top;</li>
+<li>origin: right top;</li>
+<li>origin: right bottom;</li>
+</ul>
+<ul class="y">
+        <li>no transform</li>
+        <li>origin: center;</li>
+        <li>origin: left bottom;</li>
+        <li>origin: left top;</li>
+        <li>origin: right top;</li>
+        <li>origin: right bottom;</li>
+        </ul>
