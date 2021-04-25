@@ -1,0 +1,46 @@
+<style>
+    div{
+         
+    }
+         
+</style>
+<h1>translate</h1>
+<ul>
+       <li> translate(x)，代表沿x轴位移x像素，y轴默认为0</li>
+       <li> translate(x, y)，代表沿x轴和y轴位移的距离;单位为px</li>
+       <li> x值：为正则沿着x轴向右位移，为负则沿着x轴向左位移</li>
+       <li> y值：为正则沿着y轴向下位移，为负则沿着y轴向上位移</li>
+       <li> 位移的参考原点为元素左上角     </li>
+</ul>
+<h1>rotate</h1>
+<ul>
+       <li> rotate(angle)：单位为deg</li>
+       <li> 默认为围绕元素中心为原点进行旋转; 2d空间只能围绕元素中心的z轴旋转</li>
+       <li> 参数为正值则顺时针旋转，为负值则逆时针旋转</li>
+</ul>
+<h1>scale</h1>
+<ul>
+    <li>scale(num)，代表同时在x轴和y轴两个方向缩放相同的倍数</li>
+    <li>scale(x, y) ，分别代表x和y轴方向缩放相应的倍数;数字，无单位</li> 
+    <li> 默认为围绕元素中心为原点进行缩放</li>
+</ul>
+<h1>skew</h1>
+<ul>
+    <li>skew(x)，代表沿x轴变形x角度，y轴默认为0;参数为变形的角度，单位为deg</li>
+    <li>skew(x, y)，代表沿x轴变形x的角度，沿y轴变形y的角度</li>
+    <li>  
+        x值：为正则向左变形，为负则向右变形
+        y值：为正则向上变形，为负则向下变形</li>   
+    <li> 默认为围绕元素中心为原点进行变形 </li>
+</ul>
+<h1>transform-origin</h1>
+<ul>
+    <li>变换之后的元素不会脱离文档流</li>
+    <li> 原点就是元素的中心，可以通过transform-origin属性改变原点位置
+            默认值为transform-origin: center center;
+            </li>
+    <li>  除了位移(因为位移元素直接移跑了)，别的变换(旋转、缩放、变形）都是围绕原点变换的
+            原点关键字：top bottom center left right
+     <li> 只设置一个的话，另一个为默认值center
+            也可以使用px、em、百分比值(一般用不到)</li>
+</ul>

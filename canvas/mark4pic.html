@@ -1,14 +1,14 @@
 <body>
-    <canvas width="1210" height="600"></canvas>
+    <canvas width="600" height="600"></canvas>
     <script>
     let canvas=document.querySelector('canvas')
     let ctx=canvas.getContext('2d')
     let img=new Image()
-    img.src='../img/word.jpeg'
+    img.src='../img/border-image-slice.png'
     img.onload=function(){
         ctx.drawImage(img,0,0)
         ctx.font = "60px serif";
-        ctx.fillText('zcc', 1000,400)
+        ctx.fillText('zcc', 200,200)
     }
     </script>
 </body>
