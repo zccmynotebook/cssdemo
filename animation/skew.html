@@ -40,7 +40,26 @@ li::after{
     transform-origin: right top;
 }
 .x li:nth-child(6){
-     transform: skew(var(--turndeg));
+    transform: skew(var(--turndeg));
+    transform-origin: right bottom;
+}
+.y li:nth-child(2){
+    transform: skew(0,var(--turndeg));
+}
+.y li:nth-child(3){
+    transform: skew(0,var(--turndeg));
+    transform-origin: left bottom;
+}
+.y li:nth-child(4){
+     transform: skew(0,var(--turndeg));
+    transform-origin: left top;
+}
+.y li:nth-child(5){
+     transform: skew(0,var(--turndeg));
+    transform-origin: right top;
+}
+.y li:nth-child(6){
+    transform: skew(0,var(--turndeg));
     transform-origin: right bottom;
 }
 </style>
