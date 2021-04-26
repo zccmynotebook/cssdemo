@@ -1,0 +1,38 @@
+
+<style>
+
+ul{
+    list-style: none;
+    width: 500px;
+    margin: 100px auto;
+}
+li{
+    width: 100px;
+    height: 100px;
+    background: yellowgreen;
+    margin-bottom: 10px;
+    position: relative;
+    transition: 2s;
+}
+ul:hover li:nth-child(2){
+    transform: translateX(100px) scale(0.5)
+}
+ul:hover li:nth-child(3){
+    transform: scale(0.5) translateX(100px) 
+}
+ul:hover li:nth-child(4){
+    transform: scale(0.5)
+}
+ul:hover li:nth-child(5){
+    transform: translateX(100px) 
+}
+</style>
+
+<ul>
+<li>no transform</li>
+<li>translateX(100px) scale(0.5)</li>
+<li>scale(0.5) translateX(100px) </li>
+<li>scale(0.5)</li>
+<li>translateX(100px) </li>
+</ul>
+ 

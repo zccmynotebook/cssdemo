@@ -23,43 +23,82 @@ li::after{
     left:0;
     top:0;
     box-sizing: border-box;
+    z-index: 2;
 }
 .x li:nth-child(2){
     transform: skew(var(--turndeg));
+}
+.x li:nth-child(2)::after{
+    transform: skew(-30deg);
 }
 .x li:nth-child(3){
     transform: skew(var(--turndeg));
     transform-origin: left bottom;
 }
+.x li:nth-child(3)::after{
+    transform: skew(-30deg);
+    transform-origin: left bottom;
+}
 .x li:nth-child(4){
-     transform: skew(var(--turndeg));
+    transform: skew(var(--turndeg));
+    transform-origin: left top;
+}
+.x li:nth-child(4)::after{
+    transform: skew(-30deg);
     transform-origin: left top;
 }
 .x li:nth-child(5){
-     transform: skew(var(--turndeg));
+    transform: skew(var(--turndeg));
+    transform-origin: right top;
+}
+.x li:nth-child(5)::after{
+    transform: skew(-30deg);
     transform-origin: right top;
 }
 .x li:nth-child(6){
     transform: skew(var(--turndeg));
     transform-origin: right bottom;
 }
+.x li:nth-child(6)::after{
+    transform: skew(-30deg);
+    transform-origin: right bottom;
+}
 .y li:nth-child(2){
     transform: skew(0,var(--turndeg));
 }
+.y li:nth-child(2)::after{
+    transform: skew(0,-30deg);
+}
 .y li:nth-child(3){
     transform: skew(0,var(--turndeg));
+    transform-origin: left bottom;
+}
+.y li:nth-child(3)::after{
+    transform: skew(0,-30deg);
     transform-origin: left bottom;
 }
 .y li:nth-child(4){
      transform: skew(0,var(--turndeg));
     transform-origin: left top;
 }
+.y li:nth-child(4)::after{
+    transform: skew(0,-30deg);
+    transform-origin: left top;
+}
 .y li:nth-child(5){
-     transform: skew(0,var(--turndeg));
+    transform: skew(0,var(--turndeg));
+    transform-origin: right top;
+}
+.y li:nth-child(5)::after{
+    transform: skew(0,-30deg);
     transform-origin: right top;
 }
 .y li:nth-child(6){
     transform: skew(0,var(--turndeg));
+    transform-origin: right bottom;
+}
+.y li:nth-child(6)::after{
+    transform: skew(0,-30deg);
     transform-origin: right bottom;
 }
 </style>
