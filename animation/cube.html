@@ -1,0 +1,71 @@
+
+<style>
+div{
+    perspective: 600px;
+    margin: 200px auto;
+    width: 300px; 
+    position: relative;
+    backface-visibility: visible;
+  perspective-origin: 150% 150%;
+}
+ul{
+    list-style: none;
+    width: 100px; 
+    height: 100px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+li{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    left: 0;
+    top:0;
+    background: yellowgreen;
+    position: absolute;
+}
+li:nth-child(5) {
+    top:-100px;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+    background-color: aqua
+}
+li:nth-child(6) {
+    top:100px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    background-color: darkgreen;
+}
+li:nth-child(3) {
+    left:-100px;
+    transform-origin: right;
+    transform: rotateY(-90deg);
+    background-color: gold;
+}
+li:nth-child(4) {
+    left:100px;
+    transform-origin: left;
+    transform: rotateY(90deg);
+    background-color: rgba(0, 255, 0, 0.3)
+}
+li:nth-child(1) {
+    background: rgba(0, 0, 0, 0.3);
+
+}
+li:nth-child(2) {
+    transform: translateZ(-100px);
+}
+</style>
+
+<div>
+        <ul>
+                <li>前</li>
+                <li>后</li>
+                <li>左</li>
+                <li>右</li>
+                <li>上</li>
+                <li>下</li>
+                </ul>
+</div>
+ 
