@@ -1,0 +1,37 @@
+
+<style>
+ul{
+    list-style: none;
+    width: 200px; 
+    height: 200px;
+    margin: 200px auto;
+    transform-style: preserve-3d;
+    position: relative; 
+}
+li{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    left: 0;
+    top:0;
+    background: yellowgreen;
+    position: absolute;
+    backface-visibility: hidden;
+}
+ 
+li:nth-child(1) {
+    background: gold;
+    z-index: 1;
+    transition: 1s;
+    transform-origin: left;
+}
+ul:hover li:nth-child(1) {
+    transform: rotateY(180deg);
+}
+</style>
+
+<ul>
+        <li>hover查看详情</li>
+        <li>CSS 属性 backface-visibility 指定当元素背面朝向观察者时是否可见。</li>
+</ul>
+ 
