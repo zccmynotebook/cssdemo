@@ -1,0 +1,88 @@
+<html>
+    <style>
+    ul{
+        list-style: none;
+        display: flex;
+        background: yellow;
+        /* width: 600px; */
+        /* flex-wrap: wrap; */
+
+        justify-content: space-between
+    }
+    li{
+        height:100px;
+        /* flex: 1 1 300px; */
+        flex-basis: 100px;
+    }
+    li:nth-child(1){
+        background: red;
+    }
+    li:nth-child(2){
+        background: green;
+    }
+    li:nth-child(3){
+        background: blue;
+    }
+    #container {
+        height:200px;
+        width: 600px;
+        align-items: center; /* Can be changed in the live sample */
+        background-color: #8c8c8c;
+        display: flex;  
+        justify-content: center;
+        align-content:flex-end; /*该属性对单行弹性盒子模型无效。（即：带有 flex-wrap: nowrap）*/
+        flex-wrap: wrap;
+    }
+  div>div{
+      width: 200px; 
+  }
+#item1 {
+  background-color: #8cffa0;
+  min-height: 30px;
+}
+
+#item2 {
+  background-color: #a0c8ff;
+  min-height: 50px;
+}
+
+#item3 {
+  background-color: #ffa08c;
+  min-height: 40px;
+}
+
+#item4 {
+  background-color: #ffff8c;
+  min-height: 60px;
+}
+
+#item5 {
+  background-color: #ff8cff;
+  min-height: 70px;
+}
+
+#item6 {
+  background-color: #8cffff;
+  min-height: 50px;
+  font-size: 30px;
+}
+    </style>
+    <body>
+        <p>align-content属性对单行弹性盒子模型无效。（即：带有 flex-wrap: nowrap）
+                align-items是盒子的中心轴对齐，align-content整个子元素在父元素的对齐；
+        </p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <div id="container" class="flex">
+                <div id="item1">1</div>
+                <div id="item2">2</div>
+                <div id="item3">3</div>
+                <div id="item4">4</div>
+                <div id="item5">5</div>
+                <div id="item6">6</div>
+              </div>
+    </body>
+</html>
