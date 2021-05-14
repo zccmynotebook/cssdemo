@@ -1,0 +1,57 @@
+<script src="./MyPromise.js"></script>
+<script>
+// p=new MyPromise((r,j)=>{
+//     setTimeout(()=>{
+//         r('error')
+//     },1000)
+// })
+// let m=p.then().then(v=>{
+//         console.log(111)
+//     }).then(v=>{
+//         console.log(222)
+//     }).catch(e=>{
+//         console.log(e)
+//     })
+// console.log(m)
+// let a1=MyPromise.resolve(1)
+// let a2=MyPromise.reject({a:1})
+// let a3=MyPromise.resolve([1,2,3])
+// console.log(a1,a2,a3)
+// console.log(MyPromise.all([a1,a2,a3]))
+</script>
+<script>
+    // p1=new Promise((r,j)=>{
+    //     setTimeout(()=>{
+    //         console.log(111)
+    //             r('ok')
+    //             console.log(555)
+    //         })
+    //     console.log(222)
+    // })
+    // p1.then(v=>{
+    //     console.log(333)
+    // })
+    // console.log(444)
+    </script>
+    <script>
+        // p2=new MyPromise((r,j)=>{
+        //     setTimeout(()=>{
+        //         console.log(111)
+        //         r('ok')
+        //     })
+        //     console.log(222)
+        // })
+        // p2.then(v=>{
+        //     console.log(333)
+        // })
+        // console.log(444)
+        </script>
+
+        <script>
+        async function f(){
+            //await是promise成功的值；
+            let a=await Promise.reject('1')
+            console.log(a)
+        }
+        f()
+        </script>
