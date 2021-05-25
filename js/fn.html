@@ -1,0 +1,18 @@
+<script src="./throttle.js"></script>
+<script src="./debounce.js"></script>
+<script>
+
+//  window.addEventListener('mousemove',throttle(()=>{
+//          console.log(111)
+//      },1000))
+// window.onmousemove=throttle(()=>{
+//          console.log(222)
+//      },1000)
+</script>
+<input id="txt"/>
+<script>
+    txt.onkeyup=debounce(function(e){
+        console.log(1,e)
+    },1000)
+</script>
+ 

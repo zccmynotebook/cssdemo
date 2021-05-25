@@ -13,3 +13,12 @@ function flatlist(list){
 }
 flatlist(a)
 console.log(b)
+
+function flatlist1(list){
+     let result = [...list]
+     while(result.some(item=>Array.isArray(item))){
+         result = [].concat(...result)
+     }
+     return result
+}
+console.log(flatlist1(a))
