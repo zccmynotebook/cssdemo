@@ -2,7 +2,8 @@
 echo "输入1-3之间的数"
 read num
 case $num in
-1) 
+
+1|1.0) 
   echo "你输入的是1"
   ;;
 2) 
@@ -13,5 +14,5 @@ case $num in
   ;;
 *)
   echo "不听话"
-;;   
+;;  
 esac
