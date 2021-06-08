@@ -4,7 +4,7 @@ const https = require('https');
 const http = require('http');
 
 const name=process.argv[2]
-const dist=resolve(__dirname,'../../../Music/李荣浩')
+const dist=resolve(__dirname,'../../../Music/')
 const murl='https://music.163.com/song/media/outer/url'
 if (!name){
     console.error('文件名称')
