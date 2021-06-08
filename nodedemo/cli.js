@@ -11,3 +11,6 @@ rl.question('What do you think of Node.js? ', (answer) => {
 
   rl.close();
 });
+rl.on('close',()=>{
+  process.exit(0)
+})

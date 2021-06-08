@@ -1,0 +1,2 @@
+- 首先查找专辑，生成歌单，比如参考zhoushen.js
+- 运行downloadmusic.js file ,file是第一步生成的歌单名称

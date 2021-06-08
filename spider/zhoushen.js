@@ -3,14 +3,14 @@ const https=require('https')
 const cheerio=require('cheerio')
 const fs=require('fs')
 let data=[]
-https.get('https://music.163.com/artist?id=861777',(resp)=>{
+https.get('https://music.163.com/artist?id=1030001',(resp)=>{
         resp.on('data',(chunk)=>{
             data.push(chunk)
         })
         resp.on('end',()=>{
             dealData(data.join())
         })
-    })
+})
 let list=[]
 function dealData(stream){
     const $=cheerio.load(stream)
@@ -20,7 +20,7 @@ function dealData(stream){
     save(JSON.stringify(list))
 }
 function save(data){
-    fs.writeFile('华晨宇歌单.txt',data,(err)=>{
+    fs.writeFile('周深歌单.txt',data,(err)=>{
         if(!err) console.log('保存成功')
     })
 }
