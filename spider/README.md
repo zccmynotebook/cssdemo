@@ -1,2 +1,3 @@
-- 首先查找专辑，生成歌单，比如参考zhoushen.js
+- 首先查找专辑id，生成歌单，比如参考zhoushen.js
 - 运行downloadmusic.js file ,file是第一步生成的歌单名称
+- 下载前注意修改歌曲保存路径

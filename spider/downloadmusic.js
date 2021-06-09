@@ -13,17 +13,16 @@ if (!name){
  
 fs.readFile(name,(err,data)=>{
   if(!err){
-    JSON.parse(data).forEach( v=>{
-        getRealUrl(murl+v.src.substring(5),v.name)     
+    JSON.parse(data).forEach(async(v,i)=>{
+        await sleep(i*1000)
+        getRealUrl(murl+v.src.substring(5),v.name,i)   
     })
   }
 })
  function getRealUrl(url,name){
-    https.get(url, function(res){
+    https.get(url, async (res)=>{
         if(res.headers.location){
-            setTimeout(async()=>{
-                await download(res.headers.location,name)
-            },10000)
+            await download(res.headers.location,name)
             return
         }
     })
@@ -39,3 +38,11 @@ async function download(url,name){
         })
     })
 } 
+
+function sleep(time){
+    return new Promise((r,j)=>{
+        setTimeout(()=>{
+            r()
+        },time)
+    })
+}
