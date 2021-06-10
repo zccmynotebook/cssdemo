@@ -1,0 +1,17 @@
+{
+  "name": "nodedemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --harmony  process.js --version",
+    "test1": "node --harmony --version process.js ",
+    "test2": "node  process.js --harmony --version"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "~6.6.1"
+  }
+}
