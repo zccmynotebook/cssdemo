@@ -1,0 +1,51 @@
+<style>
+*{
+    margin: 0;
+    padding: 0
+}
+div{
+    background-color: green;
+    width: 1000px;
+    height:200px;
+}
+article{
+    width: 50%;
+    height: 50%;
+    padding: 1%;
+    margin: 1%;
+    background-color: yellow;
+}
+aside{
+    background-color: pink;
+    width: 1000px;
+    height:200px;
+    padding: 50px;
+    border: 50px solid red;
+    box-sizing: border-box;
+}
+section{
+    width: 50%;
+    height: 50%;
+    background-color: yellow;
+}
+</style>
+
+<div>
+    <article>
+        元素的宽高设置百分比取的分别是父元素的宽高计算；<br/>
+        padding,margin设置百分比取的分别是父元素的宽计算；
+        border不支持百分比；
+        
+        如果父元素不设置高度，则向上寻找设置高度的父元素直至root;
+
+        定位元素的百分比取值是最近的定位父元素的上述对应值；
+        fix取html的对应值；
+    </article>
+</div>
+
+<aside>
+    <section>
+        p元素内不能包裹其他块元素；
+        box-sizing: border-box取得是上述父元素去除paddig-border后的宽高值再计算
+    </section>
+</aside>

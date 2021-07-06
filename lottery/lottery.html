@@ -1,0 +1,69 @@
+<html>
+    <head><title>抽奖</title>
+    <style>
+        div{
+            width: 220px;
+            height: 220px;;
+            background-color: yellow;
+            position: relative;
+            margin: 10px auto;
+        }
+        div>span{
+            position: absolute;
+            box-sizing: border-box;
+            width: 60px;
+            height: 60px;
+            background-color: yellowgreen;
+            border: 1px solid green;
+            line-height: 60px;
+            text-align: center;
+        }
+        span.active{
+            background: orange;
+        }
+        #cj{
+            cursor: pointer;
+        }
+        div>span:nth-child(2),div>span:nth-child(5),div>span:nth-child(8){
+            left:80px;
+        }
+        div>span:nth-child(3),div>span:nth-child(6),div>span:nth-child(9){
+            left:160px;
+        }
+        div>span:nth-child(4),div>span:nth-child(5),div>span:nth-child(6){
+            top:80px;
+        }
+        div>span:nth-child(7),div>span:nth-child(8),div>span:nth-child(9){
+            top:160px;
+        }
+    </style>
+    </head>
+    <body>
+        <div>
+            <span>1</span>
+            <span class="active">2</span>
+            <span>3</span>
+            <span>4</span>
+            <span id='cj'>抽奖</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            
+        </div>
+        <script>
+            let list = document.querySelectorAll('span')
+            window.onload=()=>{              
+                cj.onclick=(e)=>{
+                    list.forEach(v=>{
+                        v.classList.remove('active')
+                    })
+                    let num = Math.floor(Math.random()*9)
+                    if(num==5) num=6
+                    console.log(num)
+                    list[num].classList.add('active')
+                }
+            }
+        </script>
+    </body>
+</html>

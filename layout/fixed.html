@@ -9,22 +9,26 @@
  article{
      background-color: coral;
      margin: 30px;
-     position: relative;
+     
  }
  div{
-     
+    position: relative;
      background-color: cyan
  }
  section{
      position: fixed;
-     width: 100%;
+     width: 10%;
      background-color: seagreen
  }
 </style>
 <article>
+        position: fixed;虽然相对浏览器窗口，但是不设置定位属性，则在保持在布局流当前位置。
         <div>
-                <section>
+                <section id="s">
      
                 </section>
             </div>  
 </article>
+<script>
+s.innerHTML=s.offsetLeft
+</script>
