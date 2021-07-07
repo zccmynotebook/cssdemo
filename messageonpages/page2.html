@@ -1,0 +1,19 @@
+<button type="button" id="setnum">localStorage设置一个值</button>
+<button type="button" id="setnum1">sessionStorage设置一个值</button>
+<h2 id="txt"></h2>
+
+<script>
+let i=0
+window.onstorage=function(e){
+    console.log(2,e)
+    let {newValue} = e
+    i=newValue
+    txt.innerHTML=newValue
+}
+setnum.onclick=function(){
+localStorage.setItem('num',i++)
+}
+setnum1.onclick=function(){
+    sessionStorage.setItem('num',i++)
+}
+</script>

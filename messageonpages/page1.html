@@ -1,0 +1,23 @@
+
+<a href="page2.html" target="_blank">去page2页面</a>
+<br/>
+<a href="page3.html" target="_blank">去page3页面</a>
+<br/>
+<button type="button" id="setnum">localStorage设置一个值</button>
+<button type="button" id="setnum1">sessionStorage设置一个值</button>
+<h2 id="txt"></h2>
+
+<script>
+let i=1;
+setnum.onclick=function(){
+    localStorage.setItem('num',i++)
+}
+setnum1.onclick=function(){
+    sessionStorage.setItem('num',i++)
+}
+window.onstorage=function(e){
+      let {newValue} = e
+      i=newValue
+      txt.innerHTML=newValue
+}
+</script>
