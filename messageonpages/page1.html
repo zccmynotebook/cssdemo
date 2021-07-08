@@ -1,23 +1,52 @@
 
-<a href="page2.html" target="_blank">去page2页面</a>
-<br/>
-<a href="page3.html" target="_blank">去page3页面</a>
-<br/>
-<button type="button" id="setnum">localStorage设置一个值</button>
-<button type="button" id="setnum1">sessionStorage设置一个值</button>
-<h2 id="txt"></h2>
+<div>
+        <h1>localStorage</h1>
+        <a href="page2.html" target="_blank">去page2页面</a>
+        <br/>
+        <a href="page3.html" target="_blank">去page3页面</a>
+        <br/>
+        <button type="button" id="setnum">localStorage设置一个值</button>
+        <h2 id="txt"></h2>
+</div>
 
 <script>
+window.name='p1'
 let i=1;
 setnum.onclick=function(){
     localStorage.setItem('num',i++)
 }
-setnum1.onclick=function(){
-    sessionStorage.setItem('num',i++)
-}
+
 window.onstorage=function(e){
       let {newValue} = e
       i=newValue
       txt.innerHTML=newValue
 }
+</script>
+
+
+<div>
+        <h1>postMessage</h1>
+        <a href="page2.html" target="_blank">去page2页面</a>
+        <br/>
+        <a href="page3.html" target="_blank">去page3页面</a>
+        <br/>
+        <button type="button" id="setnum1">postMessage一个值</button>
+        <h2 id="txt1"></h2>
+</div>
+
+<script>
+let sw=new SharedWorker('share.js')
+//Starts the sending of messages queued on the port (only needed when using EventTarget.addEventListener;
+// it is implied when using MessagePort.onmessage.)
+//sw.port.start();
+console.log(sw)
+sw.port.onmessage=(e)=>{
+    console.log(121,e)
+}
+setnum1.onclick=function(){
+    sw.port.postMessage('from p1');
+
+} 
+
+ 
 </script>

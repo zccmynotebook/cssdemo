@@ -1,0 +1,45 @@
+<style>
+p,li{
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+li{
+    height: 300px;
+    background-color: aquamarine;
+    margin-bottom: 20px;
+}
+</style>
+
+<p>懒加载的实现原理,getBoundingClientRect&lt;0,表示滚出可视区外
+
+</p>
+<script src="../js/debounce.js"></script>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script>
+let list=document.querySelectorAll('li')
+const h=list[0].clientHeight
+const wh=window.innerHeight
+window.addEventListener('scroll',debounce((e)=>{
+        list.forEach((v,i)=>{
+            let obj=v.getBoundingClientRect()
+            let {top,bottom,height} = obj
+            console.log(obj,i,top,bottom)
+            if(top<10&&top>-h){
+                console.log(`开始请求图片${i+1}了`)
+            } else if(bottom-height>0){
+            //最后一张图
+            console.log(`开始请求图片${i+1}了`)
+
+            }
+        })
+},1000))
+</script>

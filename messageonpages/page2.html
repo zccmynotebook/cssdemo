@@ -1,8 +1,8 @@
 <button type="button" id="setnum">localStorage设置一个值</button>
-<button type="button" id="setnum1">sessionStorage设置一个值</button>
 <h2 id="txt"></h2>
 
 <script>
+window.name='p2'
 let i=0
 window.onstorage=function(e){
     console.log(2,e)
@@ -13,7 +13,30 @@ window.onstorage=function(e){
 setnum.onclick=function(){
 localStorage.setItem('num',i++)
 }
-setnum1.onclick=function(){
-    sessionStorage.setItem('num',i++)
+</script>
+
+<div>
+        <h1>postMessage</h1>
+        <a href="page2.html" target="_blank">去page2页面</a>
+        <br/>
+        <a href="page3.html" target="_blank">去page3页面</a>
+        <br/>
+        <button type="button" id="setnum1">postMessage一个值</button>
+        <h2 id="txt1"></h2>
+</div>
+
+<script>
+let sw=new SharedWorker('share.js')
+console.log(sw)
+sw.port.start();
+
+sw.port.onmessage=(e)=>{
+    console.log(221,e)
 }
+setnum1.onclick=function(){
+    sw.port.postMessage({from:'p2',value:{city:'bj',like:'apple'}});
+
+} 
+
+ 
 </script>

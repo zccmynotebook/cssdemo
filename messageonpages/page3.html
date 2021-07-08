@@ -1,8 +1,13 @@
-<button type="button" id="setnum">localStorage设置一个值</button>
-<button type="button" id="setnum1">sessionStorage设置一个值</button>
-<h2 id="txt"></h2>
+<div>
+    <h1>localStorage</h1>
+    <button type="button" id="setnum">localStorage设置一个值</button>
+    <h3>sessionStorage只在当前tab有效</h3>
+    <button type="button" id="setnum1">sessionStorage设置一个值</button>
+    <h2 id="txt"></h2>
+</div>
 
 <script>
+window.name='p3'
 let i=0
 window.onstorage=function(e){
     let {newValue} = e
@@ -13,6 +18,11 @@ setnum.onclick=function(){
   localStorage.setItem('num',i++)
 }
 setnum1.onclick=function(){
-    sessionStorage.setItem('num',i++)
+    sessionStorage.setItem('num1',i++)
+    txt.innerHTML=sessionStorage.getItem('num1')
+}
+window.onload=function(){
+  txt.innerHTML=sessionStorage.getItem('num1')
 }
 </script>
+
