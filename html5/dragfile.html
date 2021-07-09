@@ -1,0 +1,25 @@
+<style>
+div{
+    height: 300px;
+    background-color: yellowgreen;
+}
+</style>
+<p>拖拽一个图片到本页面</p>
+<div id="c"></div>
+<script>
+c.ondragover=(e)=>{
+    e.preventDefault()
+}
+c.ondrop=(e)=>{
+    e.preventDefault() // 图片默认会打开
+    let file = e.dataTransfer.files[0]
+    let fr=new FileReader()
+    fr.readAsDataURL(file)
+    fr.onload=()=>{
+       // c.innerHTML=`<img src="${fr.result}"/>`
+       let i=new Image()
+       i.src=fr.result
+       c.appendChild(i)
+    }
+}
+</script>

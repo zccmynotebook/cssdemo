@@ -1,0 +1,45 @@
+<style>
+#r{
+    background-color: greenyellow;
+    height: 100px;
+}
+</style>
+
+<button type="button" id="rcontent">删除选中内容</button>
+<button type="button" id="rnode">删除选中内容的节点</button>
+
+<div id="r">
+        Range 接口表示一个包含节点与文本节点的一部分的文档片段。 
+
+        可以用 Document 对象的 Document.createRange 方法创建 Range，
+        
+        可以用 Selection 对象的 getRangeAt 方法获取 Range。
+        
+        可以通过 Document 对象的构造函数 Range() 来得到 Range。
+</div> 
+<embed src="#" width="300" height="300">
+<script>
+rcontent.onclick=function(){
+    let range = document.createRange()
+    range.selectNodeContents(r)
+    range.deleteContents()
+}
+rcontent.rnode=function(){
+    let range = document.createRange()
+    range.selectNode(r)
+    range.deleteContents()
+}
+</script>
+
+<div id="r1">Range接口表示一个包含节点与文本节点的一部分的文档片段。</div> 
+<button type="button" id="rm">删除指定位置字符串</button>
+<script>
+    rm.onclick=function(){
+        let rn = r1.firstChild
+        let range = document.createRange()
+        range.setStart(rn,1)
+        range.setEnd(rn,3)
+        range.deleteContents()
+    }
+         
+</script>

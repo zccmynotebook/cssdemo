@@ -1,0 +1,49 @@
+<iframe id="f1" name="f2"></iframe>
+<form id="form1" name="form2">
+        <div>
+          <label for="example" id="label">Let's submit some text</label>
+          <input id="example" type="text" name="text" value="选择方向">
+          <label for="ice-cream-choice">Choose a flavor:</label>
+        <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+        <input id="time" type="date" name="time" value="2021-01-10">
+        <datalist id="ice-cream-flavors">
+            <option value="Chocolate">
+            <option value="Coconut">
+            <option value="Mint">
+            <option value="Strawberry">
+            <option value="Vanilla">
+        </datalist>
+
+        </div>
+        <div>
+          <input type="submit" value="Send" formaction="/url1" formtarget="_blank" formmethod="GET">
+          <input type="submit" value="Send" formaction="/url2" formtarget="f1" formmethod="POST">
+          <input type="submit" value="Send" formaction="/url3" formtarget="f2" formmethod="GET"  autofocus>
+        </div>
+        <output name="op">121</output>
+      </form>
+      <textarea name="like" form="form1" id="like">textarea选择方法</textarea>
+      <input  type="number" id="num" name="city" form="form2" value="123">
+      <input type="checkbox" indeterminate name="cb" form="form1"/>
+      <button  type="button" id="btn">input选择方法</button>
+      <button  type="button" id="btn1">textarea选择方法</button>
+      <script>
+            console.dir(label)
+            console.dir(num)
+            console.dir(time)
+            btn.onclick=function(){
+                let {selectionDirection,selectionStart, selectionEnd} = example
+                console.log(selectionDirection,selectionStart, selectionEnd)
+            }
+            btn1.onclick=function(){
+                let {selectionDirection,selectionStart, selectionEnd} = like
+                console.log(selectionDirection,selectionStart, selectionEnd)
+            }
+      </script>
+
+<details>
+        <summary>概述</summary>
+        详细内容
+        <mark>测试元素</mark>
+    </details>
+    
