@@ -1,0 +1,37 @@
+<ul id="wrap">
+    <li>1</li>
+    <li>111</li>
+    <li>11</li>
+    <li>101</li>
+</ul>
+<button id="btn">排序</button>
+<script>
+    //HTMLCollection
+    btn.onclick=function(){
+        let list = document.getElementsByTagName('li')
+        let arr=Array.from(list)
+        arr.sort((a,b)=>a.innerHTML-b.innerHTML)
+        let f=document.createDocumentFragment()
+        arr.forEach(v=>f.appendChild(v))
+        wrap.appendChild(f)
+    }
+</script>
+<script>
+    //NodeList
+    btn.onclick=function(){
+        let list = document.querySelectorAll('li')
+        let arr=Array.from(list)
+        arr.sort((a,b)=>a.innerHTML-b.innerHTML)
+        let f=document.createDocumentFragment()
+        arr.forEach(v=>f.appendChild(v))
+        wrap.appendChild(f)
+    }
+</script> 
+<script>
+    btn.onclick=function(){
+        let list = document.querySelectorAll('li')
+        let arr=Array.from(list)
+        arr.sort((a,b)=>a.innerHTML-b.innerHTML)       
+        arr.forEach(v=>wrap.appendChild(v))
+    }     
+</script>
