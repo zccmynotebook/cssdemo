@@ -1,0 +1,41 @@
+ul{
+    list-style: none;
+    position: relative;
+    width: 280px;
+    height: 285px;
+    overflow: hidden;
+    margin: auto;
+    padding:0;
+}
+li{
+    position: absolute;
+}
+.fadeIn{
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 1s;
+}
+.fadeOut{
+    z-index: -1;
+    opacity: 0;
+}
+.wrap{
+    position: relative;
+    width: 360px;
+    margin: auto;
+    font-size: 60px;
+    line-height: 285px;
+}
+ 
+.left,.right{
+    position: absolute;
+    opacity: 0;  
+    cursor: pointer;
+}
+.wrap:hover .left,.wrap:hover .right{
+    opacity: 1;
+    transition: opacity 1s;
+}
+.right{
+    right:0;
+}
