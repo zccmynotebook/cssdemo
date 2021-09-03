@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="../carousel/jquery-3.6.0.slim.min.js"></script>
+        <style>
+        .wrap{
+            position: relative;
+            box-sizing: border-box;
+            
+            margin: auto;
+           
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            list-style: none;
+            box-sizing: border-box;
+            border: 1px solid green;
+            float: left;
+            margin-left:10px;
+        }
+        img{
+            width: 100%;
+        }
+        #big{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border: 10px solid orange;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+        </style>
+    </head>
+    <body>
+       <div class="wrap">
+            <ul>
+                <li><img src="../carousel/img/1.webp"/></li>
+                <li><img src="../carousel/img/2.webp"/></li>
+                <li><img src="../carousel/img/3.webp"/></li>
+                <li><img src="../carousel/img/4.webp"/></li>
+            </ul>      
+            <div id="big">
+                <img/>
+            </div>
+       </div>
+<script>
+$(function(){
+//    $('ul').delegate('li','mousemove',function(e){
+//     console.log(e.target===this)
+//    })
+$('li img').mousemove(function(e){
+    console.log(e,this)
+   })
+})
+</script>
+    </body>
+</html>
