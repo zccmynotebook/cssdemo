@@ -4,29 +4,32 @@
             body{
                 margin: 0
             }
-        #wrap{
-            position: relative;
-            width: 400px;
-            height: 400px;       
-            border: 1px solid orange; 
-            margin: auto;
-            margin-top:100px;
-        }
-        img{
+            body>div{
+                position: relative;
+                width: 450px;
+                height: 450px;       
+                border: 1px solid orange; 
+                padding: 0;
+                margin: 0;
+                margin-top:100px;
+                display: inline-block;               
+            }
+        #wrap img{
             width: 100%;
         }
-        #big{
+        #big img{
             position: absolute;
-            width: 800px;
-            height: 800px;
-            border: 1px solid orange;
-            display: none;
+            width: 170%;
         }
+        #big{
+            overflow: hidden;
+        }
+
         #mask{
             position: absolute;
             opacity: 0.5;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             background: #000;
             left:0;
             top:0;
@@ -39,39 +42,44 @@
             <div id="mask"></div>
        </div>
        <div id="big">
-            <img src="./img/big.jpg"/>
+            <img src="./img/big.jpg" id="bImg"/>
         </div>
 <script>
     let maskw=mask.clientWidth,
         maskh=mask.clientHeight;
+    let L=0,T=0
     window.onload=function(){       
-        // wrap.onmouseenter=function(e){
-        //   big.style.display="block"
-        // }
-        // wrap.onmouseleave=function(e){
-        //   big.style.display="none"
-        // }
+        wrap.onmouseenter=function(e){
+          big.style.display="inline-block"
+          mask.style.display="block"
+        }
+        wrap.onmouseleave=function(e){
+          big.style.display="none"
+          mask.style.display="none"
+        }
         wrap.onmousemove=function(e){
             setPosition(e)
         }
 
     }
     function setPosition(e){      
-        let left=e.clientX-wrap.offsetLeft,
-            top=e.clientY-wrap.offsetTop;
-            
+        let left=e.clientX-wrap.offsetLeft-maskw/2,
+            top=e.clientY-wrap.offsetTop-maskh/2;
+
         if(left>wrap.clientWidth-maskw){
             left = wrap.clientWidth-maskw
         }else if(left<0){
-            left = e.clientX-wrap.offsetLeft
+            left = 0
         }
 
         if(top>wrap.clientHeight-maskh){
             top = wrap.clientHeight-maskh
         }else if(top<0){
-            top = wrap.offsetTop-maskh
+            top = 0
         }
         mask.style=`left:${left}px;top:${top}px`
+        bImg.style=`left:-${left}px;top:-${top}px`
+
     }
 </script>
 </body>
