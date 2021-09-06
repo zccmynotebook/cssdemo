@@ -1,0 +1,41 @@
+<style>
+.fold ul{
+    display: none;
+}
+.expand ul{
+    display: block;
+}
+</style>
+<ul class="lev1 fold">
+    <li>一级一
+        <ul class="lev2">
+                <li>二级一
+                        <ul class="lev3">
+                                <li>三级一</li>
+                                <li>三级二</li>
+                                <li>三级三</li>
+                        </ul>
+                </li>
+                <li>二级二</li>
+                <li>二级三</li>
+        </ul>
+    </li>
+    <li>一级二</li>
+</ul>
+<script>
+    window.onload=function(){
+        let list=document.querySelectorAll('ul')
+        list.forEach(item=>{
+                item.addEventListener('click',(e)=>{
+                    let p=e.target.parentNode
+                if(p.classList.contains('fold')){
+                    p.classList.remove('fold')
+                    p.classList.add('expand')
+                } else {
+                    p.classList.remove('expand')
+                    p.classList.add('fold')
+                }
+            })
+        })
+    }
+</script>
