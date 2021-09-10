@@ -1,0 +1,36 @@
+.wrap{
+    position: relative;
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    font-size: 60px;
+    line-height: 100px;
+    overflow: hidden;
+    border: 1px solid red;
+}
+ul{
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin: 0;
+}
+li{
+    float: left;
+    width: 100px;
+    text-align: center;   
+}
+li.one{
+    background-color: aquamarine
+}
+li.two{
+    background-color: orangered
+}
+li.three{
+    background-color: green
+}
+li.four{
+    background-color: orange
+}
+ 
