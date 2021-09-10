@@ -27,7 +27,7 @@
         </style>
     </head>
     <body>
-        <section>html即使设置overflow: hidden;document.documentElement.scrollHeight也是真实的高度</section>
+      <section id="section">html即使设置overflow: hidden;document.documentElement.scrollHeight也是真实的高度</section>
        <div id="border">border</div>
        <div id="content">content</div>
        <main></main>
@@ -36,6 +36,7 @@
        console.log(border.clientWidth,border.offsetWidth,border.clientTop,border.offsetTop)
        console.log(content.clientWidth,content.offsetWidth,content.clientTop,content.offsetTop,content.offsetLeft)
        console.log(document.documentElement.scrollHeight)
+       console.log(section.scrollHeight)
        </script>
     </body>
 </html>

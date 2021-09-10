@@ -1,0 +1,23 @@
+html,body,main{
+    height: 100%;
+    overflow: hidden;
+    background-color: darkseagreen
+}
+main{
+    
+    position: relative;
+}
+section{
+    position: absolute;
+    width: 100%;
+}
+footer{
+    height: 30px;
+}
+p{
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6)
+}
+p.active{
+    color: green
+}
