@@ -3,21 +3,27 @@ html,body,main{
     overflow: hidden;
     background-color: darkseagreen
 }
+h3{
+    text-align: center;
+    margin:10px;
+}
 main{
-    
     position: relative;
+    height: calc(100% - 120px);
 }
 section{
     position: absolute;
     width: 100%;
 }
 footer{
-    height: 30px;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
 }
 p{
     text-align: center;
     color: rgba(255, 255, 255, 0.6)
 }
 p.active{
-    color: green
+    color: green;
 }

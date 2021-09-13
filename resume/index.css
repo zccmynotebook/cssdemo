@@ -1,0 +1,62 @@
+html{
+   /* font-size: 100px; */
+}
+html,body,main,aside{
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: yellowgreen;
+}
+h3{
+    text-align: center;
+    margin:10px; 
+}
+main{
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: 16px;
+}
+.tc{
+    text-align: center
+}
+aside p{
+    height: 200px; 
+    font-size: 20px;
+    transform: translateY(60px);   
+}
+aside h3{
+    font-size: 30px;
+    height: 100px; 
+    transform: translateY(50px);  
+}
+.hide{
+    display: none;
+}
+.processwrap{
+    position: relative;
+    width: 60%;
+    height:20px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+#process{
+    position: absolute;
+    
+    height: 100%;
+    background: -webkit-linear-gradient(left bottom,orange 0%,yellow 25%,orange 50%,yellow 75%,orange 100%);
+    animation: move 0.5s infinite linear 0s both;
+    background-size: 20px 20px;
+    border-radius: 10px;
+}
+
+
+@keyframes move{
+    from{
+        background-position: 0 0
+    }
+    to{
+        background-position: 0 -20px
+    }
+}

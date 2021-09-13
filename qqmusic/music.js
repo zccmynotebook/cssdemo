@@ -1,18 +1,18 @@
 window.onload=function(){
-    const audio=new Audio()
-    audio.src='love.mp3'
-    audio.onload=event => {
-        console.log(3)
+    // const audio=new Audio()
+    // audio.src='love.mp3'
+    // audio.onload=event => {
+    //     console.log(3)
          
-    };
-    audio.addEventListener("canplay", event => {
-        console.log(1,audio.readyState)
-        /* 音频可以播放；如果权限允许则播放 */
-        audio.play();
-    });
-    audio.addEventListener("canplaythrough", event => {
-        console.log(2,audio.readyState)
-                audio.play();
-    });
+    // };
+    const pheight=document.querySelector('p').clientHeight
+    const all=document.querySelectorAll('p').length;
+    const section= document.querySelector('section')
+    let i=1;
+    let timer=setInterval(()=>{
+        if(i>=all) clearInterval(timer);
+        i++;
+        section.style.transform=`translateY(-${pheight*i}px)`
+    },1000)
     
 }
