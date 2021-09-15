@@ -1,0 +1,15 @@
+<div id="content"></div>
+<script>
+const txt='抱着沙发睡眼昏花凌乱头发却渴望像电影主角一样潇洒,夕阳西下翻着电话无人拨打是习惯孤独的我该得到的吧'
+let i=0
+
+let timer=setInterval(()=>{
+    if(i<txt.length){
+      content.innerHTML+=txt[i]
+      i++
+    } else{
+        clearInterval(timer)
+    }
+},300)
+
+</script>

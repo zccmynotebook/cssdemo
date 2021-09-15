@@ -4,7 +4,7 @@ window.onload=function(){
     let aside=document.querySelector('aside')
     let n=0;
     function loading(){
-      n+=10 
+      n+=50 
       if(n>100){
         clearInterval(timer)
         main.classList.remove('hide')
@@ -14,4 +14,10 @@ window.onload=function(){
       }
     }
     let timer=setInterval(loading, 500);
+
+
+    var mySwiper = new Swiper ('.swiper-container', {
+      //direction: 'vertical',
+      loop: true,
+    })       
 }
