@@ -21,12 +21,12 @@ function deepClone1(obj){
         let result = Array.isArray(obj)? []:{}
         for(let key in obj){
             if (obj.hasOwnProperty(key)) {
-                if (obj[key]instanceof RegExp) {
+                if (obj[key] instanceof RegExp) {
                    result[key] = new RegExp(obj[key])
-                } else if (obj[key]instanceof Date) {
+                } else if (obj[key] instanceof Date) {
                    result[key] = new Date(obj[key])
                 } else{
-                    result[key] = deepClone1(obj[key])
+                   result[key] = deepClone1(obj[key])
                 }               
             }
         }
