@@ -16,3 +16,14 @@
         }
      }
  }
+ function throttle1(fn,time){
+    let timer;
+    return function(e){
+        if(timer) return
+        timer = setTimeout(()=>{
+            console.log(this,e)
+            fn.call(this,e)
+            timer = null
+        },time)
+    }
+}
