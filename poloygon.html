@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三棱柱</title>
+    <style> 
+        *{
+            margin: 0;  
+            padding: 0; 
+
+        }
+        #wrap{
+            position: absolute; 
+            left: 0;    
+            top: 0; 
+            right: 0;   
+            margin: 0;  
+            margin: auto;
+            width: 300px;   
+            height: 300px;  
+            /*border: 1px solid #000;*/
+
+            perspective: 200px;
+            /*transform-style:preserve-3d;*/
+        }
+        #wrap > .box{
+            position: absolute; 
+            left: 0;    
+            top: 0; 
+            right: 0;   
+            bottom: 0;  
+            margin: auto;   
+            width: 100px;   
+            height: 100px;  
+            transition: 3s transform;
+            transform-style:preserve-3d;
+            /*transform-origin: center center -28.867513459481287px;*/
+
+
+/*                      animation-name: rotate;
+            animation-duration: 2s;
+            animation-timing-function:linear;
+            animation-iteration-count:infinite;*/
+            animation:rotate 5s linear infinite;
+
+        }
+        #wrap > .box > div{
+            position: absolute;
+            width: 100px;   
+            height: 100px;  
+            background: rgba(123,125,212,.3);
+            text-align: center;
+            font: 50px/100px "微软雅黑";
+            /*backface-visibility:hidden;*/
+            /*transform-origin: center center -28.867513459481287px;*/
+        }
+
+
+        #wrap:hover .box{
+            /*transform: rotateY(360deg);*/
+        }
+        @keyframes rotate{
+            0%{
+                transform:none;
+            }
+            100%{
+                transform: rotateY(-360deg) rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"> 
+        <div class="box">
+            <!-- <div>1</div>
+            <div>2</div>
+            <div>3</div> -->
+        </div>
+    </div>
+
+    <script>
+        window.onload = function(){
+            createLZ(5)
+        }
+
+        function createLZ(n){
+                let boxNode= document.querySelector("#wrap > .box")
+                let styleNode = document.createElement("style")
+
+                let degOut = 360/n
+                let degIn = 180-360/n
+                
+                let div = ""
+                let css = ""
+
+                let frg1 = document.createDocumentFragment()
+                let frg2 = document.createDocumentFragment()
+                for(let i=0; i<n; i++){
+                    div = document.createElement('div')
+                    div.innerHTML = i+1
+                    frg1.appendChild(div)
+                    css += '#wrap > .box > div:nth-child('+(i+1)+'){transform:rotateY('+(i*degOut)+'deg);}'
+
+                }
+
+                boxNode.appendChild(frg1)
+                let subNode = document.querySelector("#wrap > .box > div")
+                let length = subNode.offsetWidth
+
+                css += "#wrap > .box{transform-origin:center center -"+(length/2*Math.tan(degIn/2*Math.PI/180))+"px;}"
+                css += "#wrap > .box > div{transform-origin:center center -"+(length/2*Math.tan(degIn/2*Math.PI/180))+"px;}"
+                console.log(frg1)
+                console.log(css)
+
+                styleNode.innerHTML = css
+                document.head.appendChild(styleNode)
+            }
+        
+    </script>
+</body>
+</html>
